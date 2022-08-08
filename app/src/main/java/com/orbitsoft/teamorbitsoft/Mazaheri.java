@@ -13,6 +13,7 @@ TextView jad;
         setContentView(R.layout.activity_mazaheri);
         //salam
 
+
         jad=findViewById(R.id.textView4);
         String tv = "";
         String st="";
