@@ -60,13 +60,6 @@ TextView jad;
             int temp = 0;
 
 
-            rnum[0] = (int) (random() * (max - min + 1) + min);
-
-            st=String.valueOf(rnum[0]);
-
-            txt.setText(st);
-
-
 
             for (int i = 0; i <= 5; i++) {
 
