@@ -1,9 +1,12 @@
 package com.orbitsoft.teamorbitsoft;
 
+import static java.lang.Math.random;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Mazaheri extends AppCompatActivity {
 TextView jad;
@@ -12,8 +15,14 @@ TextView jad;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mazaheri);
         //salam
+        zarb();
+        sixgreat();
 
 
+
+    }
+
+    public void zarb(){
         jad=findViewById(R.id.textView4);
         String tv = "";
         String st="";
@@ -41,6 +50,63 @@ TextView jad;
         }
         jad.setText(tv);
 
+        public void sixgreat() {
+
+            String tv = "";
+            txt.setText(tv);
+
+            int min = 200;
+            int max = 400;
+            int temp = 0;
+
+
+            rnum[0] = (int) (random() * (max - min + 1) + min);
+
+            st=String.valueOf(rnum[0]);
+
+            txt.setText(st);
+
+
+
+            for (int i = 0; i <= 5; i++) {
+
+
+                rnum[i] = (int) (random() * (max - min + 1) + min);
+
+            }
+
+            for (int i = 0; i <= 5; i++) {
+
+                for (int j = i + 1; j <= 5; j++) {
+                    if (rnum[i] < rnum[j]) {
+                        temp = rnum[i];
+                        rnum[i] = rnum[j];
+                        rnum[j] = temp;
+                        //Toast.makeText(this, " "+rnum[i], Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
+
+            }
+
+            for (int i = 0; i <= 5; i++) {
+
+                st=String.valueOf(rnum[i]);
+
+
+                tv = tv + " "+st;
+            }
+            tv=tv +"\n\n";
+            tv=tv+"Last Two Great : " + rnum[0] + " " +rnum[1] ;
+            tv=tv +"\n\n";
+            int sum=rnum[0]  + rnum[1] ;
+
+            tv=tv+"Sum Is : " + String.valueOf(sum);
+            txt.setText(tv);
+
 
     }
+
+
 }
